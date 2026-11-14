@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Les news mathématiques du jour, triées par pertinence et traduites en français." />
+  <title>Maths News du Jour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body id="top">
+  <header class="header">
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark">∑</span>
+        <span class="brand-name">Maths News</span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#top">Accueil</a>
+        <a href="#news">News</a>
+        <a href="#fonctionnement">Fonctionnement</a>
+        <a href="#apropos">À propos</a>
+      </nav>
+      <a class="btn btn-primary btn-sm" href="#news">News du jour</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1 class="hero-title">Chaque matin, l'actualité des mathématiques en français</h1>
+        <p class="hero-sub">Les meilleures news mathématiques du web, agrégées automatiquement.</p>
+        <p class="hero-desc">
+          Chaque jour, le site collecte les articles des principales sources mathématiques,
+          les trie par pertinence et les traduit en français. Vous lisez, vous cliquez,
+          vous explorez l'article original en un clic.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#news">
+            <span aria-hidden="true">↓</span> Lire les news du jour
+          </a>
+          <a class="btn btn-secondary" href="#fonctionnement">
+            <span aria-hidden="true">▶</span> Comment ça marche
+          </a>
+        </div>
+        <ul class="hero-checklist">
+          <li>Collecte quotidienne automatique</li>
+          <li>Articles triés par pertinence</li>
+          <li>Titres et résumés en français</li>
+          <li>Sources publiques vérifiées</li>
+        </ul>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="mockup">
+          <div class="mockup-bar">
+            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <span class="mockup-url">mathsnews.du.jour</span>
+          </div>
+          <div class="mockup-body">
+            <div class="mockup-badge">News du jour</div>
+            <div class="mockup-line mockup-line-title">Un nouveau regard sur les nombres premiers</div>
+            <div class="mockup-line"></div>
+            <div class="mockup-line mockup-line-short"></div>
+            <div class="mockup-formula">e<sup>iπ</sup> + 1 = 0</div>
+            <div class="mockup-row">
+              <span class="mockup-chip">Pertinence</span>
+              <span class="mockup-chip mockup-chip-alt">Français</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section id="news" class="news-section">
+      <div class="container">
+        <div class="news-toolbar">
+          <div>
+            <h2 class="section-title">Les news du jour</h2>
+            <p id="status" class="status" role="status"></p>
+          </div>
+          <div class="toolbar-actions">
+            <label class="date-picker" for="date-input">
+              <span class="visually-hidden">Choisir une date</span>
+              <input type="date" id="date-input" />
+            </label>
+            <button id="refresh-btn" class="btn btn-primary" type="button">
+              <span aria-hidden="true">↻</span> Rafraîchir
+            </button>
+          </div>
+        </div>
+        <section id="articles" class="articles" aria-live="polite"></section>
+      </div>
+    </section>
+
+    <section id="fonctionnement" class="how-section">
+      <div class="container">
+        <h2 class="section-title">Comment ça marche</h2>
+        <div class="how-grid">
+          <div class="how-card">
+            <span class="how-num">1</span>
+            <h3>Collecte</h3>
+            <p>Chaque matin, le site parcourt les flux RSS des grandes sources mathématiques : magazines, blogs de chercheurs, preprints arXiv.</p>
+          </div>
+          <div class="how-card">
+            <span class="how-num">2</span>
+            <h3>Pertinence</h3>
+            <p>Un score évalue chaque article : vocabulaire mathématique, fraîcheur, qualité de la source. Le hors-sujet est écarté.</p>
+          </div>
+          <div class="how-card">
+            <span class="how-num">3</span>
+            <h3>Traduction</h3>
+            <p>Titres et résumés sont traduits en français, avec mise en cache pour aller vite et ne jamais traduire deux fois.</p>
+          </div>
+          <div class="how-card">
+            <span class="how-num">4</span>
+            <h3>Lecture</h3>
+            <p>Vous parcourez la sélection du jour, classée par pertinence, et cliquez vers l'article original pour approfondir.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apropos" class="about-section">
+      <div class="container about-inner">
+        <h2 class="section-title">À propos</h2>
+        <p>
+          Maths News du Jour est un agrégateur indépendant et open source. Les articles
+          proviennent de sources publiques (Quanta Magazine, blogs mathématiques, arXiv) ;
+          les liens renvoient toujours vers les articles originaux. Les résumés sont
+          traduits automatiquement et peuvent contenir des imprécisions.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>∑ Maths News du Jour</span>
+      <span>Agrégation quotidienne · Tri par pertinence · Traduction française</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

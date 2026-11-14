@@ -1,0 +1,20 @@
+{
+  "name": "maths-news-du-jour",
+  "version": "1.0.0",
+  "description": "Site de news mathématiques en français : agrégation quotidienne, tri par pertinence, traduction française.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "refresh": "node src/run-pipeline.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "node-cron": "^3.0.3",
+    "rss-parser": "^3.13.0"
+  }
+}
