@@ -4,7 +4,7 @@ const SOURCES = [
   {
     id: 'quanta',
     name: 'Quanta Magazine',
-    url: 'https://api.quantamagazine.org/feed/1',
+    url: 'https://www.quantamagazine.org/feed/',
     topic: 'math',
   },
   {
@@ -22,7 +22,7 @@ const SOURCES = [
   {
     id: 'arxiv-front',
     name: 'arXiv MathFront',
-    url: 'http://export.arxiv.org/rss/math.MA',
+    url: 'https://rss.arxiv.org/rss/math.GM',
     topic: 'research',
   },
 ];

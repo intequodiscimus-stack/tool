@@ -9,12 +9,14 @@ trie par pertinence, les traduit en français et les affiche dans une interface
 
 1. **Collecte quotidienne** — un planificateur (`node-cron`) lance le pipeline chaque
    matin à 7 h (heure de Paris par défaut). Il récupère les flux RSS de `src/sources.js`,
-   filtre les articles des dernières 36 heures et déduplique.
+   filtre les articles de la fenêtre glissante (72 h par défaut, `NEWS_WINDOW_HOURS`),
+   récupère le texte réel de chaque article pour construire un vrai résumé et déduplique.
 2. **Tri par pertinence** — chaque article reçoit un score basé sur des mots-clés
    mathématiques (titre pondéré plus fort que le résumé), la fraîcheur et la source
    (`src/relevance.js`). Les articles hors-sujet sont écartés.
-3. **Traduction française** — titres et résumés sont traduits via une API
-   LibreTranslate, avec cache disque pour ne jamais traduire deux fois le même texte.
+3. **Traduction française** — titres et résumés sont traduits via une chaîne de
+   fournisseurs (LibreTranslate si une clé/instance est configurée, sinon MyMemory gratuit),
+   avec cache disque pour ne jamais traduire deux fois le même texte.
    En cas d'échec, le texte original est conservé.
 4. **Stockage** — un fichier JSON par journée dans `data/` (aucune base de données
    requise).
@@ -42,6 +44,7 @@ news du jour n'existe, la collecte est déclenchée automatiquement.
 | `TRANSLATE_ENABLED` | `true` | Activer/désactiver la traduction |
 | `LIBRETRANSLATE_URL` | `https://libretranslate.com` | Instance LibreTranslate utilisée |
 | `LIBRETRANSLATE_API_KEY` | — | Clé API (recommandé pour l'instance publique) |
+| `NEWS_WINDOW_HOURS` | `72` | Fenêtre de collecte en heures |
 | `MAX_ARTICLES` | `30` | Nombre maximum d'articles par jour |
 
 ## API

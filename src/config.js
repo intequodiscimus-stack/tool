@@ -7,6 +7,7 @@ const config = {
   translateEnabled: (process.env.TRANSLATE_ENABLED || 'true') === 'true',
   libreTranslateUrl: process.env.LIBRETRANSLATE_URL || 'https://libretranslate.com',
   libreTranslateApiKey: process.env.LIBRETRANSLATE_API_KEY || '',
+  newsWindowHours: Number(process.env.NEWS_WINDOW_HOURS || 72),
   maxArticles: Number(process.env.MAX_ARTICLES || 30),
   dataDir: 'data',
 };
