@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Les news mathématiques du jour, triées par pertinence et traduites en français." />
+  <title>Maths News du Jour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark">∑</span>
+        <div>
+          <h1 class="brand-title">Maths News du Jour</h1>
+          <p class="brand-sub">L'actualité mathématique, chaque matin, en français.</p>
+        </div>
+      </div>
+      <div class="header-actions">
+        <label class="date-picker" for="date-input">
+          <span class="visually-hidden">Choisir une date</span>
+          <input type="date" id="date-input" />
+        </label>
+        <button id="refresh-btn" class="btn" type="button">Rafraîchir</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <p id="status" class="status" role="status"></p>
+    <section id="articles" class="articles" aria-live="polite"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Articles agrégés de sources publiques (Quanta Magazine, blogs mathématiques, arXiv), triés par pertinence puis traduits automatiquement. Les liens renvoient vers les articles originaux.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
